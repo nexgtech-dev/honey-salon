@@ -1,0 +1,1329 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Honey Beauty Salon &amp; Spa | Haute Coiffure &amp; Bridal Atelier | Trilanga &amp; Rohit Nagar, Bhopal</title>
+  <meta name="description" content="Honey Beauty Salon & Spa — Official L'Oréal Professionnel Paris Partner Salon in South Bhopal. Dual luxury studios at Trilanga (Near Aura Mall) and Rohit Nagar. Haute bridal makeup, Keratin smoothing, and clinical Hydra-Facials.">
+  
+  <link rel="icon" type="image/svg+xml" href="assets/honey-icon.svg">
+
+  <!-- Google Fonts: Playfair Display + Plus Jakarta Sans + Cormorant Garamond -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
+            editorial: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            champagne: {
+              50: '#FDFBF7',
+              100: '#FBF7EE',
+              200: '#F5ECDA',
+              300: '#EBD8B8',
+              400: '#DFC296',
+              500: '#D4A373',
+              600: '#B88252',
+              700: '#94613A',
+              800: '#754B2C',
+              900: '#5A3821'
+            },
+            atelier: {
+              base: '#FAF9F6',
+              card: '#FFFFFF',
+              dark: '#181615',
+              charcoal: '#262220',
+              muted: '#7A736E'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    body {
+      background-color: #FAF9F6;
+      color: #262220;
+      overflow-x: hidden;
+    }
+    
+    /* Scroll Reading Progress */
+    #scrollProgress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      width: 0%;
+      background: linear-gradient(90deg, #D4A373, #B88252, #DFC296);
+      z-index: 9999;
+      transition: width 0.1s ease-out;
+    }
+
+    /* Asymmetric Lookbook Image Hover */
+    .lookbook-frame {
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .lookbook-frame:hover {
+      transform: translateY(-4px) scale(1.015);
+      box-shadow: 0 25px 50px -12px rgba(90, 56, 33, 0.18);
+    }
+
+    /* Runway Collection Card */
+    .runway-card {
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      border: 1px solid rgba(223, 194, 150, 0.35);
+    }
+    .runway-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(184, 130, 82, 0.6);
+      box-shadow: 0 20px 40px -15px rgba(90, 56, 33, 0.12);
+    }
+
+    /* Tab Switcher Active State */
+    .campus-tab.is-active {
+      background-color: #181615;
+      color: #FFFFFF;
+      border-color: #181615;
+      box-shadow: 0 10px 25px -5px rgba(24, 22, 21, 0.25);
+    }
+
+    /* Menu Service Filter */
+    .service-filter-btn.is-active {
+      background-color: #B88252;
+      color: #FFFFFF;
+      border-color: #B88252;
+    }
+
+    /* Smooth FAQ Accordion */
+    .faq-body {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: max-height 0.35s ease-in-out, opacity 0.3s ease;
+    }
+    .faq-body.is-open {
+      max-height: 240px;
+      opacity: 1;
+    }
+  </style>
+</head>
+<body class="font-sans antialiased selection:bg-champagne-300 selection:text-atelier-dark">
+
+  <div id="scrollProgress"></div>
+
+  <!-- URGENCY & 72H STAGING NOTICE -->
+  <aside aria-label="72-Hour VIP Priority Reservation Beacon" class="bg-atelier-dark text-stone-200 text-xs py-2.5 px-4 border-b border-champagne-500/20 sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 text-center sm:text-left">
+      <div class="flex items-center gap-2">
+        <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-champagne-500/20 text-champagne-300 font-bold uppercase tracking-wider text-[10px]">
+          <span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-ping"></span> Live Atelier Preview
+        </span>
+        <span class="text-stone-300 font-medium">Curated for Honey Beauty Salon &amp; Spa • Trilanga &amp; Rohit Nagar</span>
+      </div>
+      <div class="flex items-center gap-4 text-[11px]">
+        <span class="text-stone-400">Exclusive Window: <strong class="text-champagne-300 font-mono" id="heroCountdown">71h : 44m : 18s</strong></span>
+        <a href="#booking" class="bg-champagne-500 hover:bg-champagne-400 text-atelier-dark font-extrabold px-3 py-1 rounded-md transition-colors shadow-sm">Claim VIP Slot &rarr;</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- HAUTE ATELIER HEADER & NAVIGATION -->
+  <header id="atelierHeader" class="bg-white/95 backdrop-blur-md border-b border-stone-200/80 sticky top-[37px] z-40 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Logo & Paris Affiliation Emblem -->
+      <a href="#" class="flex items-center gap-3 group" aria-label="Honey Beauty Salon & Spa Home">
+        <img src="assets/honey-brand-logo.svg" alt="Honey Beauty Salon Logo" class="h-11 sm:h-12 w-auto object-contain transition-transform group-hover:scale-105">
+      </a>
+
+      <!-- Minimalist French Atelier Nav Links -->
+      <nav class="hidden lg:flex items-center gap-7 text-sm font-semibold tracking-wide text-stone-700 whitespace-nowrap">
+        <a href="#ateliers" class="hover:text-champagne-700 transition-colors">Dual Studios</a>
+        <a href="#lookbook" class="hover:text-champagne-700 transition-colors">Haute Collections</a>
+        <a href="#hair-science" class="hover:text-champagne-700 transition-colors">L'Oréal Science</a>
+        <a href="#bridal-atelier" class="hover:text-champagne-700 transition-colors">Bridal Couture</a>
+        <a href="#rate-card" class="hover:text-champagne-700 transition-colors">Service Menu</a>
+        <a href="#testimonials" class="hover:text-champagne-700 transition-colors">Client Acclaim</a>
+      </nav>
+
+      <!-- Desk Contact & Booking Trigger -->
+      <div class="hidden lg:flex items-center gap-3">
+        <a href="tel:+919589374523" class="text-xs font-bold text-stone-800 hover:text-champagne-700 flex items-center gap-1.5 px-3.5 py-2 rounded-xl border border-stone-300 hover:bg-stone-50 transition-colors">
+          <i data-lucide="phone" class="w-3.5 h-3.5 text-champagne-700"></i> +91 95893 74523
+        </a>
+        <a href="#booking" class="bg-atelier-dark hover:bg-stone-800 text-white font-bold text-xs px-5 py-2.5 rounded-xl transition-all shadow-md flex items-center gap-2">
+          <i data-lucide="sparkles" class="w-3.5 h-3.5 text-champagne-400"></i> Book VIP Chair
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <div class="flex lg:hidden items-center gap-2">
+        <a href="https://wa.me/919589374523?text=Namaskar,%20I%20would%20like%20to%20inquire%20with%20Honey%20Salon." target="_blank" class="p-2.5 rounded-xl bg-emerald-600 text-white shadow-sm" aria-label="WhatsApp Us">
+          <i data-lucide="message-circle" class="w-4 h-4"></i>
+        </a>
+        <button id="mobileMenuBtn" aria-label="Open Navigation" class="p-2.5 rounded-xl bg-stone-100 text-stone-800 hover:bg-stone-200">
+          <i data-lucide="menu" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- MOBILE NAVIGATION DRAWER -->
+  <div id="mobileDrawer" class="fixed inset-0 z-50 bg-stone-950/80 backdrop-blur-sm hidden transition-opacity">
+    <div class="fixed top-0 right-0 bottom-0 w-80 max-w-[85vw] bg-white p-6 shadow-2xl flex flex-col justify-between overflow-y-auto">
+      <div>
+        <div class="flex items-center justify-between pb-6 border-b border-stone-200">
+          <img src="assets/honey-brand-logo.svg" alt="Honey Beauty Salon" class="h-10 w-auto">
+          <button id="mobileCloseBtn" class="p-2 text-stone-500 hover:text-stone-900 rounded-lg" aria-label="Close Menu">
+            <i data-lucide="x" class="w-6 h-6"></i>
+          </button>
+        </div>
+        <nav class="flex flex-col gap-4 pt-6 text-sm font-bold text-stone-800">
+          <a href="#ateliers" class="mobile-item py-2 border-b border-stone-100 flex items-center justify-between">Dual Studios <i data-lucide="chevron-right" class="w-4 h-4 text-stone-400"></i></a>
+          <a href="#lookbook" class="mobile-item py-2 border-b border-stone-100 flex items-center justify-between">Haute Collections <i data-lucide="chevron-right" class="w-4 h-4 text-stone-400"></i></a>
+          <a href="#hair-science" class="mobile-item py-2 border-b border-stone-100 flex items-center justify-between">L'Oréal Science <i data-lucide="chevron-right" class="w-4 h-4 text-stone-400"></i></a>
+          <a href="#bridal-atelier" class="mobile-item py-2 border-b border-stone-100 flex items-center justify-between">Bridal Couture <i data-lucide="chevron-right" class="w-4 h-4 text-stone-400"></i></a>
+          <a href="#rate-card" class="mobile-item py-2 border-b border-stone-100 flex items-center justify-between">Service Menu <i data-lucide="chevron-right" class="w-4 h-4 text-stone-400"></i></a>
+          <a href="#testimonials" class="mobile-item py-2 border-b border-stone-100 flex items-center justify-between">Client Reviews <i data-lucide="chevron-right" class="w-4 h-4 text-stone-400"></i></a>
+        </nav>
+      </div>
+      <div class="pt-6 border-t border-stone-200 space-y-3">
+        <a href="tel:+919589374523" class="w-full py-3 bg-stone-100 text-stone-900 rounded-xl font-bold flex items-center justify-center gap-2 text-xs">
+          <i data-lucide="phone" class="w-4 h-4 text-champagne-700"></i> Call Front Desk
+        </a>
+        <a href="#booking" class="mobile-item w-full py-3 bg-atelier-dark text-white rounded-xl font-bold flex items-center justify-center gap-2 text-xs shadow-md">
+          <i data-lucide="calendar" class="w-4 h-4 text-champagne-400"></i> Reserve VIP Slot
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================================================== -->
+  <!-- HERO SECTION: ASYMMETRIC HAUTE LOOKBOOK & DUAL-STUDIO CONSOLE -->
+  <!-- ======================================================== -->
+  <section class="relative pt-10 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden bg-gradient-to-b from-[#FAF9F6] via-[#F6F3ED] to-[#EFEAE1]">
+    
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      
+      <!-- Left Column: Editorial Statement & Interactive Dual-Campus Switcher -->
+      <div class="lg:col-span-7 space-y-7 text-left">
+        
+        <!-- Category Badge -->
+        <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white border border-champagne-400/50 text-champagne-800 text-xs font-bold tracking-widest uppercase shadow-sm">
+          <span class="w-2 h-2 rounded-full bg-champagne-600"></span>
+          <span>HAUTE COIFFURE &amp; BRIDAL ATELIER • BHOPAL</span>
+        </div>
+
+        <!-- High-Fashion Editorial Typography (Non-Formulaic) -->
+        <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl text-atelier-dark leading-[1.12] tracking-tight">
+          Where Parisian Hair Science Meets <span class="font-editorial italic font-normal text-champagne-700">Royal Indian Bridal Couture.</span>
+        </h1>
+
+        <p class="text-stone-600 text-base sm:text-lg leading-relaxed max-w-2xl font-normal">
+          Bhopal's designated official <strong class="text-stone-900 font-semibold">L'Oréal Professionnel Paris Partner Salon</strong>. Specializing in formaldehyde-free molecular hair restructuring, high-definition silicon airbrush bridal artistry, and bespoke medical hydra-facials across our premier South Bhopal ateliers.
+        </p>
+
+        <!-- INTERACTIVE DUAL-CAMPUS CONSOLE (TRILANGA VS ROHIT NAGAR) -->
+        <div class="p-5 rounded-2xl bg-white border border-champagne-400/40 shadow-lg space-y-4">
+          <div class="flex items-center justify-between pb-3 border-b border-stone-100">
+            <span class="text-xs uppercase font-extrabold tracking-wider text-stone-500">Select Studio Campus</span>
+            <span class="text-xs font-semibold text-emerald-600 flex items-center gap-1">
+              <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> Both Studios Open Today (10 AM – 8:30 PM)
+            </span>
+          </div>
+
+          <!-- Campus Toggle Buttons -->
+          <div class="grid grid-cols-2 gap-2">
+            <button id="tabTrilanga" onclick="switchCampus('trilanga')" class="campus-tab is-active py-2.5 px-3 rounded-xl border text-xs font-bold transition-all flex items-center justify-center gap-2">
+              <i data-lucide="map-pin" class="w-3.5 h-3.5 text-champagne-400"></i> Trilanga Flagship
+            </button>
+            <button id="tabRohit" onclick="switchCampus('rohit')" class="campus-tab py-2.5 px-3 rounded-xl border border-stone-200 bg-stone-50 text-stone-700 hover:bg-stone-100 text-xs font-bold transition-all flex items-center justify-center gap-2">
+              <i data-lucide="map-pin" class="w-3.5 h-3.5 text-stone-500"></i> Rohit Nagar Spa Suite
+            </button>
+          </div>
+
+          <!-- Live Campus Display Card -->
+          <div id="campusDetails" class="p-3.5 rounded-xl bg-champagne-50/70 border border-champagne-200/80 text-xs text-stone-700 space-y-1.5">
+            <div class="flex items-center justify-between font-bold text-stone-900">
+              <span id="campusName">Branch 1: Trilanga Flagship Studio</span>
+              <span class="text-amber-800">Near Aura Mall &amp; Reliance Fresh</span>
+            </div>
+            <p id="campusAddress" class="text-stone-600 leading-snug">Main Road, Trilanga, Bhopal, Madhya Pradesh 462039</p>
+            <div class="pt-2 flex flex-wrap items-center gap-4 text-[11px] font-semibold">
+              <a id="campusPhone" href="tel:+919589374523" class="text-stone-900 hover:text-champagne-700 flex items-center gap-1">
+                <i data-lucide="phone-call" class="w-3 h-3 text-champagne-700"></i> Direct: +91 95893 74523
+              </a>
+              <a id="campusMapLink" href="https://maps.google.com/?q=Honey+Beauty+Salon+Trilanga+Bhopal" target="_blank" rel="noopener" class="text-champagne-800 hover:underline flex items-center gap-1">
+                <i data-lucide="navigation" class="w-3 h-3 text-champagne-700"></i> Get Google Maps Directions &rarr;
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Call to Action Buttons -->
+        <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
+          <a href="https://wa.me/919589374523?text=Namaskar,%20I%20would%20like%20to%20consult%20with%20Honey%20Salon%20stylists." target="_blank" class="py-4 px-8 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold text-sm shadow-xl shadow-emerald-900/10 flex items-center justify-center gap-2.5 transition-all">
+            <i data-lucide="message-circle" class="w-4 h-4"></i> WhatsApp Atelier Concierge
+          </a>
+          <a href="#lookbook" class="py-4 px-7 rounded-xl border border-stone-300 hover:border-stone-900 bg-white hover:bg-stone-50 text-stone-900 font-bold text-sm shadow-sm flex items-center justify-center gap-2 transition-all">
+            <i data-lucide="book-open" class="w-4 h-4 text-champagne-700"></i> Explore Haute Lookbook
+          </a>
+        </div>
+
+        <!-- Verified Authority Credentials -->
+        <div class="pt-4 border-t border-stone-200/80 flex flex-wrap items-center gap-4 text-xs font-semibold text-stone-600">
+          <span class="flex items-center gap-1.5"><i data-lucide="award" class="w-4 h-4 text-champagne-700"></i> L'Oréal Professionnel Paris Partner</span>
+          <span class="flex items-center gap-1.5"><i data-lucide="star" class="w-4 h-4 text-amber-500 fill-amber-500"></i> 130+ Google Reviews (4.0 ★)</span>
+          <span class="flex items-center gap-1.5"><i data-lucide="shield-check" class="w-4 h-4 text-emerald-600"></i> Autoclave Sterilization</span>
+        </div>
+
+      </div>
+
+      <!-- Right Column: ASYMMETRIC 3-IMAGE HAUTE COUTURE LOOKBOOK COLLAGE -->
+      <div class="lg:col-span-5 relative">
+        <div class="relative grid grid-cols-12 gap-3 sm:gap-4 items-center">
+          
+          <!-- Frame 1: Tall Center Editorial Portrait (Royal Bridal Airbrush) -->
+          <div class="col-span-7 lookbook-frame rounded-3xl overflow-hidden shadow-2xl border border-champagne-300/80 bg-stone-900 relative group aspect-[3/4]">
+            <img src="assets/honey-bridal-glamour.jpg" alt="Honey Beauty Salon Bridal Radiance Bhopal" class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105">
+            <div class="absolute inset-0 bg-gradient-to-t from-stone-950/90 via-transparent to-transparent"></div>
+            <div class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-white/95 backdrop-blur-md text-[10px] font-black uppercase tracking-wider text-stone-900 shadow-md">
+              LOOK 01 • BRIDAL COUTURE
+            </div>
+            <div class="absolute bottom-3 left-3 right-3 text-white">
+              <span class="text-[11px] text-champagne-300 font-semibold block">Waterproof HD Silicon</span>
+              <h4 class="font-serif text-sm font-bold leading-tight">Royal Airbrush Bridal Radiance</h4>
+            </div>
+          </div>
+
+          <!-- Stack of Frame 2 & Frame 3 on the Right -->
+          <div class="col-span-5 space-y-3 sm:space-y-4">
+            
+            <!-- Frame 2: L'Oréal Studio (Keratin / Hair Science) -->
+            <div class="lookbook-frame rounded-2xl overflow-hidden shadow-xl border border-champagne-300/80 bg-stone-900 relative group aspect-square">
+              <img src="assets/honey-loreal-studio.jpg" alt="Honey Salon L'Oréal Studio Workstation" class="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105">
+              <div class="absolute inset-0 bg-gradient-to-t from-stone-950/80 via-transparent to-transparent"></div>
+              <div class="absolute bottom-2.5 left-2.5 right-2.5 text-white">
+                <span class="text-[9px] uppercase font-bold text-champagne-400 block tracking-wider">L'ORÉAL PARIS</span>
+                <h5 class="text-xs font-bold truncate">Molecular Hair Botox</h5>
+              </div>
+            </div>
+
+            <!-- Frame 3: Trilanga Luxury Lounge Interior -->
+            <div class="lookbook-frame rounded-2xl overflow-hidden shadow-xl border border-champagne-300/80 bg-stone-900 relative group aspect-square">
+              <img src="assets/honey-trilanga-suite.jpg" alt="Honey Salon Trilanga Flagship Interior" class="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105">
+              <div class="absolute inset-0 bg-gradient-to-t from-stone-950/80 via-transparent to-transparent"></div>
+              <div class="absolute bottom-2.5 left-2.5 right-2.5 text-white">
+                <span class="text-[9px] uppercase font-bold text-emerald-400 block tracking-wider">TRILANGA SUITE</span>
+                <h5 class="text-xs font-bold truncate">Aura Mall Corridor</h5>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Floating L'Oréal Paris Official Partner Seal -->
+          <div class="absolute -bottom-6 -left-6 bg-white p-3.5 rounded-2xl border border-champagne-400/60 shadow-xl hidden sm:flex items-center gap-3 max-w-[260px]">
+            <div class="w-10 h-10 rounded-xl bg-champagne-500/10 border border-champagne-500/30 text-champagne-700 flex items-center justify-center shrink-0">
+              <i data-lucide="award" class="w-6 h-6"></i>
+            </div>
+            <div class="text-[11px] leading-tight">
+              <strong class="text-stone-900 block font-bold">L'Oréal Professionnel</strong>
+              <span class="text-stone-500 font-medium">Paris Official Partner Salon</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ======================================================== -->
+  <!-- SECTION 2: 3-COLUMN EDITORIAL RUNWAY COLLECTIONS -->
+  <!-- ======================================================== -->
+  <section id="lookbook" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    
+    <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+      <span class="text-xs font-bold tracking-[0.2em] text-champagne-800 uppercase bg-champagne-100/60 px-4 py-1.5 rounded-full border border-champagne-300/60">
+        THE ATELIER PORTFOLIO
+      </span>
+      <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-atelier-dark tracking-tight">
+        Curated Signature Collections
+      </h2>
+      <p class="text-stone-600 text-sm sm:text-base leading-relaxed">
+        Engineered with genuine European formulations and specialized techniques across our Trilanga and Rohit Nagar studios.
+      </p>
+    </div>
+
+    <!-- 3 DISTINCT EDITORIAL RUNWAY CARDS -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      
+      <!-- Collection 01: Hair Science & Metamorphosis -->
+      <article class="runway-card rounded-3xl bg-white overflow-hidden shadow-lg flex flex-col justify-between">
+        <div>
+          <div class="relative h-64 overflow-hidden bg-stone-900 group">
+            <img src="assets/honey-keratin-treatment.jpg" alt="L'Oréal Hair Botox Treatment" class="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105">
+            <div class="absolute inset-0 bg-gradient-to-t from-stone-950/80 via-transparent to-transparent"></div>
+            <span class="absolute top-4 left-4 text-[10px] font-black uppercase tracking-widest bg-atelier-dark text-white px-3 py-1 rounded-full">
+              COLLECTION 01
+            </span>
+            <div class="absolute bottom-3 left-4 right-4 flex items-center justify-between text-white text-xs">
+              <span class="font-bold text-champagne-300">L'Oréal Pro-Keratin</span>
+              <span class="bg-black/60 backdrop-blur-sm px-2.5 py-1 rounded-lg border border-white/20">3.0 Hours Chair</span>
+            </div>
+          </div>
+
+          <div class="p-6 space-y-4">
+            <div>
+              <span class="text-[10px] uppercase font-bold text-champagne-700 tracking-wider">HAIR SCIENCE &amp; RESTORATION</span>
+              <h3 class="font-serif text-xl font-bold text-stone-900 mt-0.5">Molecular Keratin Glaze &amp; Botox</h3>
+            </div>
+            
+            <p class="text-stone-600 text-xs leading-relaxed">
+              Formaldehyde-free smoothing infused with L'Oréal Pro-Keratin and hyaluronic peptides. Seals damaged cuticles, banishes monsoon humidity frizz, and imparts mirror-like gloss for up to 6 months.
+            </p>
+
+            <div class="p-3 rounded-xl bg-stone-50 border border-stone-200/80 space-y-1.5 text-[11px] text-stone-700">
+              <div class="flex justify-between">
+                <span class="text-stone-500">Porosity Defense:</span>
+                <strong class="text-stone-900">100% Humidity Shield</strong>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-stone-500">Tensile Restructure:</span>
+                <strong class="text-stone-900">Hair Botox Peptides</strong>
+              </div>
+              <div class="flex justify-between border-t border-stone-200 pt-1">
+                <span class="text-stone-500">Tier Pricing:</span>
+                <strong class="text-champagne-800 font-bold">₹3,500 – ₹6,500</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-6 pt-0">
+          <a href="https://wa.me/919589374523?text=Namaskar,%20I%20would%20like%20to%20consult%20regarding%20Keratin%20and%20Botox%20at%20Honey%20Salon." target="_blank" class="w-full py-3 rounded-xl bg-atelier-dark hover:bg-stone-800 text-white font-bold text-xs flex items-center justify-center gap-2 transition-colors">
+            <span>Consult Hair Stylist on WhatsApp</span> &rarr;
+          </a>
+        </div>
+      </article>
+
+      <!-- Collection 02: Royal Bridal Haute Couture -->
+      <article class="runway-card rounded-3xl bg-white overflow-hidden shadow-lg flex flex-col justify-between border-champagne-400/80 relative">
+        <div class="absolute top-0 inset-x-0 h-1.5 bg-champagne-500"></div>
+        <div>
+          <div class="relative h-64 overflow-hidden bg-stone-900 group">
+            <img src="assets/honey-bridal-trial.jpg" alt="Honey Salon Royal Bridal Studio" class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105">
+            <div class="absolute inset-0 bg-gradient-to-t from-stone-950/80 via-transparent to-transparent"></div>
+            <span class="absolute top-4 left-4 text-[10px] font-black uppercase tracking-widest bg-rose-700 text-white px-3 py-1 rounded-full">
+              COLLECTION 02
+            </span>
+            <div class="absolute bottom-3 left-4 right-4 flex items-center justify-between text-white text-xs">
+              <span class="font-bold text-champagne-300">HD Airbrush &amp; Draping</span>
+              <span class="bg-black/60 backdrop-blur-sm px-2.5 py-1 rounded-lg border border-white/20">Private Suite</span>
+            </div>
+          </div>
+
+          <div class="p-6 space-y-4">
+            <div>
+              <span class="text-[10px] uppercase font-bold text-rose-700 tracking-wider">BRIDAL ATELIER &amp; GLAM</span>
+              <h3 class="font-serif text-xl font-bold text-stone-900 mt-0.5">Royal HD Airbrush Bridal Radiance</h3>
+            </div>
+            
+            <p class="text-stone-600 text-xs leading-relaxed">
+              Complete bridal transformation featuring silicon-based waterproof airbrush makeup that withstands high-power wedding photography lights. Includes 1-on-1 skin matching trials and saree couture draping.
+            </p>
+
+            <div class="p-3 rounded-xl bg-stone-50 border border-stone-200/80 space-y-1.5 text-[11px] text-stone-700">
+              <div class="flex justify-between">
+                <span class="text-stone-500">Formulation:</span>
+                <strong class="text-stone-900">MAC &amp; Kryolan Airbrush</strong>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-stone-500">Dressing Suite:</span>
+                <strong class="text-stone-900">Private VIP Lounge</strong>
+              </div>
+              <div class="flex justify-between border-t border-stone-200 pt-1">
+                <span class="text-stone-500">Package Range:</span>
+                <strong class="text-champagne-800 font-bold">₹8,500 – ₹15,000+</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-6 pt-0">
+          <a href="https://wa.me/919589374523?text=Namaskar,%20I%20am%20inquiring%20about%20Bridal%20Airbrush%20packages%20and%20trials." target="_blank" class="w-full py-3 rounded-xl bg-rose-700 hover:bg-rose-800 text-white font-bold text-xs flex items-center justify-center gap-2 transition-colors">
+            <span>Book Bridal Trial on WhatsApp</span> &rarr;
+          </a>
+        </div>
+      </article>
+
+      <!-- Collection 03: Clinical Derma-Care & Hydra-Glow -->
+      <article class="runway-card rounded-3xl bg-white overflow-hidden shadow-lg flex flex-col justify-between">
+        <div>
+          <div class="relative h-64 overflow-hidden bg-stone-900 group">
+            <img src="assets/honey-hydra-facial.jpg" alt="7-Step Medical Hydra-Facial" class="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105">
+            <div class="absolute inset-0 bg-gradient-to-t from-stone-950/80 via-transparent to-transparent"></div>
+            <span class="absolute top-4 left-4 text-[10px] font-black uppercase tracking-widest bg-emerald-800 text-white px-3 py-1 rounded-full">
+              COLLECTION 03
+            </span>
+            <div class="absolute bottom-3 left-4 right-4 flex items-center justify-between text-white text-xs">
+              <span class="font-bold text-emerald-300">Ultrasonic Vortex</span>
+              <span class="bg-black/60 backdrop-blur-sm px-2.5 py-1 rounded-lg border border-white/20">75 Minutes</span>
+            </div>
+          </div>
+
+          <div class="p-6 space-y-4">
+            <div>
+              <span class="text-[10px] uppercase font-bold text-emerald-700 tracking-wider">CLINICAL DERMA WELLNESS</span>
+              <h3 class="font-serif text-xl font-bold text-stone-900 mt-0.5">7-Step Vortex Medical Hydra-Facial</h3>
+            </div>
+            
+            <p class="text-stone-600 text-xs leading-relaxed">
+              Medical-grade pore purification utilizing vortex hydro-suction, salicylic exfoliation, hyaluronic peptide infusion, cold hammer cryotherapy, and phototherapy LED stimulation for glass-skin luminescence.
+            </p>
+
+            <div class="p-3 rounded-xl bg-stone-50 border border-stone-200/80 space-y-1.5 text-[11px] text-stone-700">
+              <div class="flex justify-between">
+                <span class="text-stone-500">Methodology:</span>
+                <strong class="text-stone-900">7-Stage Dermabrasion</strong>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-stone-500">Skin Target:</span>
+                <strong class="text-stone-900">Glass Skin Hydration</strong>
+              </div>
+              <div class="flex justify-between border-t border-stone-200 pt-1">
+                <span class="text-stone-500">Session Rate:</span>
+                <strong class="text-champagne-800 font-bold">₹2,500 – ₹4,500</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-6 pt-0">
+          <a href="https://wa.me/919589374523?text=Namaskar,%20I%20would%20like%20to%20book%20a%20Hydra-Facial%20appointment." target="_blank" class="w-full py-3 rounded-xl bg-atelier-dark hover:bg-stone-800 text-white font-bold text-xs flex items-center justify-center gap-2 transition-colors">
+            <span>Reserve Hydra-Facial on WhatsApp</span> &rarr;
+          </a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ======================================================== -->
+  <!-- SECTION 3: DUAL-STUDIO CAMPUS ARCHITECTURE & DIRECTIONS -->
+  <!-- ======================================================== -->
+  <section id="ateliers" class="py-20 px-4 sm:px-6 lg:px-8 bg-white border-y border-stone-200">
+    <div class="max-w-7xl mx-auto">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+        <div>
+          <span class="text-xs font-bold tracking-[0.2em] text-champagne-700 uppercase">DUAL BHOPAL DESTINATIONS</span>
+          <h2 class="font-serif text-3xl sm:text-4xl font-bold text-stone-900 mt-2">Our Trilanga &amp; Rohit Nagar Suites</h2>
+        </div>
+        <p class="text-stone-600 text-sm max-w-md">
+          Two luxury havens strategically situated in South Bhopal's premier residential catchments for seamless accessibility and valet parking.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <!-- Campus 1: Trilanga Flagship -->
+        <div class="p-8 rounded-3xl bg-champagne-50/50 border border-champagne-300/80 space-y-6">
+          <div class="aspect-video rounded-2xl overflow-hidden bg-stone-900">
+            <img src="assets/honey-trilanga-suite.jpg" alt="Honey Salon Trilanga Bhopal" class="w-full h-full object-cover">
+          </div>
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold uppercase text-champagne-800 bg-champagne-200/60 px-3 py-1 rounded-full">CAMPUS 01 • FLAGSHIP</span>
+              <span class="text-xs text-stone-500 font-semibold">Open: 10:00 AM – 08:30 PM</span>
+            </div>
+            <h3 class="font-serif text-2xl font-bold text-stone-900">Trilanga High-Fashion Flagship</h3>
+            <p class="text-stone-600 text-sm leading-relaxed">
+              Main Road, Trilanga (Directly neighboring Aura Mall &amp; Reliance Fresh), Bhopal, MP 462039. Features 8 dedicated styling chairs, dual L'Oréal chemical wash stations, and private bridal makeup suites.
+            </p>
+            <div class="pt-2 flex items-center gap-3">
+              <a href="https://maps.google.com/?q=Honey+Beauty+Salon+Trilanga+Bhopal" target="_blank" rel="noopener" class="py-2.5 px-4 rounded-xl bg-atelier-dark text-white font-bold text-xs flex items-center gap-2 hover:bg-stone-800">
+                <i data-lucide="map-pin" class="w-3.5 h-3.5 text-champagne-400"></i> Open in Google Maps
+              </a>
+              <a href="tel:+919589374523" class="py-2.5 px-4 rounded-xl border border-stone-300 text-stone-800 font-bold text-xs hover:bg-stone-100">
+                Call +91 95893 74523
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Campus 2: Rohit Nagar Retreat -->
+        <div class="p-8 rounded-3xl bg-champagne-50/50 border border-champagne-300/80 space-y-6">
+          <div class="aspect-video rounded-2xl overflow-hidden bg-stone-900">
+            <img src="assets/honey-rohitnagar-suite.jpg" alt="Honey Salon Rohit Nagar Bhopal" class="w-full h-full object-cover">
+          </div>
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold uppercase text-champagne-800 bg-champagne-200/60 px-3 py-1 rounded-full">CAMPUS 02 • RETREAT</span>
+              <span class="text-xs text-stone-500 font-semibold">Open: 10:00 AM – 08:30 PM</span>
+            </div>
+            <h3 class="font-serif text-2xl font-bold text-stone-900">Rohit Nagar Spa &amp; Wellness Suite</h3>
+            <p class="text-stone-600 text-sm leading-relaxed">
+              56, Main Road, Ramsharnam Colony, Rohit Nagar (Serving Bawadiya Kalan &amp; Gulmohar Colony), Bhopal, MP 462039. Designed for tranquil derma-facials, aromatherapy body scrubs, and quiet personal pampering.
+            </p>
+            <div class="pt-2 flex items-center gap-3">
+              <a href="https://maps.google.com/?q=Honey+Beauty+Salon+Rohit+Nagar+Bhopal" target="_blank" rel="noopener" class="py-2.5 px-4 rounded-xl bg-atelier-dark text-white font-bold text-xs flex items-center gap-2 hover:bg-stone-800">
+                <i data-lucide="map-pin" class="w-3.5 h-3.5 text-champagne-400"></i> Open in Google Maps
+              </a>
+              <a href="tel:+917552562774" class="py-2.5 px-4 rounded-xl border border-stone-300 text-stone-800 font-bold text-xs hover:bg-stone-100">
+                Landline: 0755 2562774
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ======================================================== -->
+  <!-- SECTION 4: SERVICE MENU & TRANSPARENT RATE CARD -->
+  <!-- ======================================================== -->
+  <section id="rate-card" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <div class="text-center max-w-3xl mx-auto mb-14 space-y-3">
+      <span class="text-xs font-bold tracking-[0.2em] text-champagne-800 uppercase bg-champagne-100/60 px-4 py-1.5 rounded-full border border-champagne-300/60">
+        TRANSPARENT ATELIER DIRECTORY
+      </span>
+      <h2 class="font-serif text-3xl sm:text-4xl font-bold text-stone-900">
+        Service Menu &amp; Investment Guide
+      </h2>
+      <p class="text-stone-600 text-sm">
+        Every service is performed using single-use sealed kits, autoclave sterilized tools, and certified European formulations.
+      </p>
+    </div>
+
+    <!-- Filter Buttons -->
+    <div class="flex flex-wrap justify-center gap-2 mb-10">
+      <button onclick="filterServices('all')" class="service-filter-btn is-active px-5 py-2 rounded-full border border-stone-300 text-xs font-bold transition-all">All Protocols</button>
+      <button onclick="filterServices('hair')" class="service-filter-btn px-5 py-2 rounded-full border border-stone-300 text-xs font-bold transition-all">L'Oréal Hair Care</button>
+      <button onclick="filterServices('bridal')" class="service-filter-btn px-5 py-2 rounded-full border border-stone-300 text-xs font-bold transition-all">Bridal Couture</button>
+      <button onclick="filterServices('skin')" class="service-filter-btn px-5 py-2 rounded-full border border-stone-300 text-xs font-bold transition-all">Clinical Hydra &amp; Skin</button>
+      <button onclick="filterServices('spa')" class="service-filter-btn px-5 py-2 rounded-full border border-stone-300 text-xs font-bold transition-all">Aromatherapy Spa</button>
+    </div>
+
+    <!-- Service Items Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-5xl mx-auto" id="serviceDirectory">
+      
+      <!-- Item 1 -->
+      <div class="service-item p-5 rounded-2xl bg-white border border-stone-200/80 shadow-sm flex items-center justify-between gap-4" data-cat="hair">
+        <div>
+          <span class="text-[10px] font-bold uppercase text-champagne-700">L'ORÉAL PARIS</span>
+          <h4 class="font-serif text-base font-bold text-stone-900">Formaldehyde-Free Keratin Smoothing</h4>
+          <p class="text-xs text-stone-500 mt-0.5">Infused with pro-keratin protein. 6 months frizz control.</p>
+        </div>
+        <div class="text-right shrink-0">
+          <span class="font-serif text-base font-bold text-stone-900 block">₹3,500 – ₹5,500</span>
+          <a href="https://wa.me/919589374523?text=Namaskar,%20I%20want%20to%20book%20Keratin%20Smoothing." target="_blank" class="text-[11px] font-bold text-emerald-600 hover:underline">Book &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Item 2 -->
+      <div class="service-item p-5 rounded-2xl bg-white border border-stone-200/80 shadow-sm flex items-center justify-between gap-4" data-cat="hair">
+        <div>
+          <span class="text-[10px] font-bold uppercase text-champagne-700">MOLECULAR REPAIR</span>
+          <h4 class="font-serif text-base font-bold text-stone-900">Hair Botox Fiber Restructure</h4>
+          <p class="text-xs text-stone-500 mt-0.5">Hyaluronic peptide filler for bleached or brittle hair.</p>
+        </div>
+        <div class="text-right shrink-0">
+          <span class="font-serif text-base font-bold text-stone-900 block">₹4,500 – ₹6,500</span>
+          <a href="https://wa.me/919589374523?text=Namaskar,%20I%20want%20to%20book%20Hair%20Botox." target="_blank" class="text-[11px] font-bold text-emerald-600 hover:underline">Book &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Item 3 -->
+      <div class="service-item p-5 rounded-2xl bg-white border border-stone-200/80 shadow-sm flex items-center justify-between gap-4" data-cat="bridal">
+        <div>
+          <span class="text-[10px] font-bold uppercase text-rose-700">HAUTE BRIDAL</span>
+          <h4 class="font-serif text-base font-bold text-stone-900">HD Airbrush Bridal Makeup &amp; Trials</h4>
+          <p class="text-xs text-stone-500 mt-0.5">Silicon base, lashes, flower sculpting &amp; lehenga draping.</p>
+        </div>
+        <div class="text-right shrink-0">
+          <span class="font-serif text-base font-bold text-stone-900 block">₹12,000 – ₹18,000</span>
+          <a href="https://wa.me/919589374523?text=Namaskar,%20I%20want%20to%20consult%20for%20HD%20Bridal%20Airbrush." target="_blank" class="text-[11px] font-bold text-emerald-600 hover:underline">Book &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Item 4 -->
+      <div class="service-item p-5 rounded-2xl bg-white border border-stone-200/80 shadow-sm flex items-center justify-between gap-4" data-cat="bridal">
+        <div>
+          <span class="text-[10px] font-bold uppercase text-rose-700">PRE-BRIDAL</span>
+          <h4 class="font-serif text-base font-bold text-stone-900">Complete Pre-Bridal Radiance Ritual</h4>
+          <p class="text-xs text-stone-500 mt-0.5">Full body scrub, gold hydra-facial, manicure &amp; pedicure.</p>
+        </div>
+        <div class="text-right shrink-0">
+          <span class="font-serif text-base font-bold text-stone-900 block">₹6,500 – ₹11,000</span>
+          <a href="https://wa.me/919589374523?text=Namaskar,%20I%20want%20to%20book%20Pre-Bridal%20Rituals." target="_blank" class="text-[11px] font-bold text-emerald-600 hover:underline">Book &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Item 5 -->
+      <div class="service-item p-5 rounded-2xl bg-white border border-stone-200/80 shadow-sm flex items-center justify-between gap-4" data-cat="skin">
+        <div>
+          <span class="text-[10px] font-bold uppercase text-emerald-700">MEDICAL DERMA</span>
+          <h4 class="font-serif text-base font-bold text-stone-900">7-Step Vortex Medical Hydra-Facial</h4>
+          <p class="text-xs text-stone-500 mt-0.5">Hydro-extraction, cryo hammer, LED light stimulation.</p>
+        </div>
+        <div class="text-right shrink-0">
+          <span class="font-serif text-base font-bold text-stone-900 block">₹2,500 – ₹4,500</span>
+          <a href="https://wa.me/919589374523?text=Namaskar,%20I%20want%20to%20book%20Hydra-Facial." target="_blank" class="text-[11px] font-bold text-emerald-600 hover:underline">Book &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Item 6 -->
+      <div class="service-item p-5 rounded-2xl bg-white border border-stone-200/80 shadow-sm flex items-center justify-between gap-4" data-cat="spa">
+        <div>
+          <span class="text-[10px] font-bold uppercase text-champagne-800">HOLISTIC SPA</span>
+          <h4 class="font-serif text-base font-bold text-stone-900">Moroccan Steam Bath &amp; Body Polish</h4>
+          <p class="text-xs text-stone-500 mt-0.5">Eucalyptus herbal scrub, heated steam &amp; sweet almond oil.</p>
+        </div>
+        <div class="text-right shrink-0">
+          <span class="font-serif text-base font-bold text-stone-900 block">₹2,800 – ₹4,200</span>
+          <a href="https://wa.me/919589374523?text=Namaskar,%20I%20want%20to%20book%20Moroccan%20Steam%20Bath." target="_blank" class="text-[11px] font-bold text-emerald-600 hover:underline">Book &rarr;</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ======================================================== -->
+  <!-- SECTION 5: AUTHENTIC BHOPAL CLIENT REVIEWS -->
+  <!-- ======================================================== -->
+  <section id="testimonials" class="py-20 px-4 sm:px-6 lg:px-8 bg-stone-100/60 border-t border-stone-200">
+    <div class="max-w-7xl mx-auto">
+      
+      <div class="text-center max-w-2xl mx-auto mb-14 space-y-2">
+        <span class="text-xs font-bold tracking-[0.2em] text-champagne-800 uppercase">130+ VERIFIED TESTIMONIALS</span>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-stone-900">What Bhopal Patrons Say</h2>
+        <p class="text-stone-600 text-xs sm:text-sm">Consistently rated 4.0 ★ across Google Maps &amp; Justdial directories.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <!-- Review 1 -->
+        <div class="p-6 rounded-3xl bg-white border border-stone-200/80 shadow-sm space-y-3">
+          <div class="flex items-center text-amber-500">
+            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+          </div>
+          <p class="text-stone-700 text-xs leading-relaxed italic">
+            "Booked Honey Salon's Trilanga studio for my sister's wedding bridal makeup. The HD airbrush stayed flawless through the entire 8-hour celebration with zero touch-ups needed. Truly professional team!"
+          </p>
+          <div class="pt-2 border-t border-stone-100 flex items-center justify-between text-xs">
+            <strong class="text-stone-900 font-bold">Pooja Saxena</strong>
+            <span class="text-stone-500">Trilanga, Bhopal</span>
+          </div>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="p-6 rounded-3xl bg-white border border-stone-200/80 shadow-sm space-y-3">
+          <div class="flex items-center text-amber-500">
+            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+          </div>
+          <p class="text-stone-700 text-xs leading-relaxed italic">
+            "Got the L'Oréal Hair Botox done at their Rohit Nagar branch. My frizzy, colored hair feels like silk even after two months. The senior chemical stylist explained the entire science patiently."
+          </p>
+          <div class="pt-2 border-t border-stone-100 flex items-center justify-between text-xs">
+            <strong class="text-stone-900 font-bold">Ananya Sharma</strong>
+            <span class="text-stone-500">Gulmohar Colony, Bhopal</span>
+          </div>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="p-6 rounded-3xl bg-white border border-stone-200/80 shadow-sm space-y-3">
+          <div class="flex items-center text-amber-500">
+            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+          </div>
+          <p class="text-stone-700 text-xs leading-relaxed italic">
+            "Extremely hygienic salon with sterilized tool packs and courteous staff. The 7-step hydra facial gave an instant glow that lasted for weeks. Very reasonable pricing for the luxury ambience they provide."
+          </p>
+          <div class="pt-2 border-t border-stone-100 flex items-center justify-between text-xs">
+            <strong class="text-stone-900 font-bold">Ritu Verma</strong>
+            <span class="text-stone-500">Shahpura Lake, Bhopal</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ======================================================== -->
+  <!-- SECTION 6: VIP APPOINTMENT WIZARD WITH BRANCH SELECTOR -->
+  <!-- ======================================================== -->
+    <!-- ======================================================== -->
+  <!-- SECTION 5.5: FREQUENTLY ASKED QUESTIONS (FAQ Accordion) -->
+  <!-- ======================================================== -->
+  <section id="faq" class="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto border-t border-stone-200">
+    <div class="text-center space-y-2 mb-10">
+      <span class="text-xs font-bold uppercase tracking-widest text-champagne-800">ATELIER GUIDELINES & CONSULTATION</span>
+      <h2 class="font-serif text-3xl font-bold text-stone-900">Frequently Asked Questions</h2>
+      <p class="text-stone-600 text-xs sm:text-sm">Expert answers on bridal packages, L'Oréal keratin restructuring, and dual-campus bookings.</p>
+    </div>
+
+    <div class="space-y-4">
+      <div class="rounded-2xl border border-stone-200 bg-white p-5 shadow-sm">
+        <button onclick="toggleFaq(1)" class="w-full flex justify-between items-center text-left text-sm font-bold text-stone-900">
+          <span>What is included in your High-Definition (HD) Airbrush Bridal Metamorphosis?</span>
+          <i id="faqIcon-1" data-lucide="plus" class="w-4 h-4 text-amber-600 transition-transform"></i>
+        </button>
+        <div id="faqAns-1" class="faq-body mt-3 pt-3 border-t border-stone-100 text-xs text-stone-600 leading-relaxed">
+          Our HD Airbrush Bridal Metamorphosis packages (₹8,500 – ₹15,000+) include customized skin preparation, waterproof micro-pigment airbrush coverage, professional saree/lehenga draping, bridal hair styling, and floral embellishments. A complimentary 20-minute skin tone matching trial is included.
+        </div>
+      </div>
+
+      <div class="rounded-2xl border border-stone-200 bg-white p-5 shadow-sm">
+        <button onclick="toggleFaq(2)" class="w-full flex justify-between items-center text-left text-sm font-bold text-stone-900">
+          <span>What is the difference between Keratin smoothing and Hair Botox?</span>
+          <i id="faqIcon-2" data-lucide="plus" class="w-4 h-4 text-amber-600 transition-transform"></i>
+        </button>
+        <div id="faqAns-2" class="faq-body mt-3 pt-3 border-t border-stone-100 text-xs text-stone-600 leading-relaxed">
+          We use authentic L'Oréal Professionnel Paris & Kérastase formulations. Keratin Glaze (₹3,500+) controls weather frizz for smooth gloss. Hair Botox (₹4,500+) is a deep hyaluronic and peptide rebuilding treatment specifically formulated for dry, damaged, or bleached hair fibers.
+        </div>
+      </div>
+
+      <div class="rounded-2xl border border-stone-200 bg-white p-5 shadow-sm">
+        <button onclick="toggleFaq(3)" class="w-full flex justify-between items-center text-left text-sm font-bold text-stone-900">
+          <span>Where are your two branches located and what are the operational hours?</span>
+          <i id="faqIcon-3" data-lucide="plus" class="w-4 h-4 text-amber-600 transition-transform"></i>
+        </button>
+        <div id="faqAns-3" class="faq-body mt-3 pt-3 border-t border-stone-100 text-xs text-stone-600 leading-relaxed">
+          Our Trilanga Flagship is located on Main Road near Aura Mall & Reliance Fresh. Our Spa Suite is at 56 Ramsharnam Colony, Rohit Nagar (Bawadiya Kalan). Both locations operate Monday through Sunday from 10:00 AM to 08:30 PM.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="booking" class="py-20 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+    <div class="p-8 sm:p-12 rounded-3xl bg-white border border-champagne-300 shadow-2xl space-y-8">
+      
+      <div class="text-center space-y-2">
+        <span class="text-xs font-bold uppercase tracking-widest text-champagne-800">DIRECT FRONT DESK RESERVATIONS</span>
+        <h2 class="font-serif text-3xl font-bold text-stone-900">Schedule Your Atelier Visit</h2>
+        <p class="text-stone-600 text-xs sm:text-sm">Select your preferred branch and service below for instant confirmation on WhatsApp.</p>
+      </div>
+
+      <form id="wizardForm" onsubmit="handleBookingSubmit(event)" class="space-y-6">
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-bold text-stone-700 uppercase tracking-wider mb-2">Preferred Studio</label>
+            <select id="wizBranch" class="w-full p-3.5 rounded-xl border border-stone-300 bg-stone-50 text-xs font-semibold focus:outline-none focus:border-champagne-600">
+              <option value="Trilanga Flagship (Near Aura Mall)">Trilanga Flagship (Near Aura Mall)</option>
+              <option value="Rohit Nagar Spa Suite (Bawadiya Kalan)">Rohit Nagar Spa Suite (Bawadiya Kalan)</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold text-stone-700 uppercase tracking-wider mb-2">Service Category</label>
+            <select id="wizService" class="w-full p-3.5 rounded-xl border border-stone-300 bg-stone-50 text-xs font-semibold focus:outline-none focus:border-champagne-600">
+              <option value="Royal HD Airbrush Bridal Glamour">Royal HD Airbrush Bridal Glamour</option>
+              <option value="L'Oréal Molecular Keratin / Botox">L'Oréal Molecular Keratin / Botox</option>
+              <option value="7-Step Vortex Medical Hydra-Facial">7-Step Vortex Medical Hydra-Facial</option>
+              <option value="Moroccan Steam Bath & Spa Polish">Moroccan Steam Bath & Spa Polish</option>
+              <option value="Pre-Bridal Radiance Ritual">Pre-Bridal Radiance Ritual</option>
+              <option value="General Hair & Beauty Consultation">General Hair & Beauty Consultation</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-bold text-stone-700 uppercase tracking-wider mb-2">Your Name</label>
+            <input type="text" id="wizName" required placeholder="e.g. Priya Sharma" class="w-full p-3.5 rounded-xl border border-stone-300 bg-stone-50 text-xs focus:outline-none focus:border-champagne-600">
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-stone-700 uppercase tracking-wider mb-2">Preferred Date &amp; Time</label>
+            <input type="text" id="wizTime" placeholder="e.g. Tomorrow 3:00 PM" class="w-full p-3.5 rounded-xl border border-stone-300 bg-stone-50 text-xs focus:outline-none focus:border-champagne-600">
+          </div>
+        </div>
+
+        <button type="submit" class="w-full py-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold text-sm shadow-xl flex items-center justify-center gap-2 transition-all">
+          <i data-lucide="message-circle" class="w-4 h-4"></i> Send Booking Request via WhatsApp
+        </button>
+
+      </form>
+
+      <!-- Confirmation Modal / Message -->
+      <div id="confirmMsg" class="hidden mt-6 p-6 rounded-2xl bg-amber-50 border border-amber-200 text-stone-900 text-left">
+        <div class="flex items-center gap-3 mb-2">
+          <i data-lucide="check-circle" class="w-5 h-5 text-emerald-600"></i>
+          <h4 class="font-bold text-sm">VIP Appointment Request Initialized</h4>
+        </div>
+        <div id="confirmDetails" class="text-xs text-stone-700 space-y-1 mb-4"></div>
+        <a id="confirmWhatsappBtn" href="https://wa.me/919589374523" target="_blank" class="inline-flex items-center gap-2 bg-emerald-600 text-white px-4 py-2.5 rounded-xl text-xs font-bold shadow">
+          <i data-lucide="message-circle" class="w-4 h-4"></i> Dispatch via WhatsApp Now
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ======================================================== -->
+  <!-- SECTION 7: 4-COLUMN LUXURY FOOTER & SOCIAL MEDIA -->
+  <!-- ======================================================== -->
+  <footer id="location" class="bg-atelier-dark text-white pt-16 pb-12 border-t border-champagne-500/20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-stone-800">
+        
+        <!-- Col 1: Brand & L'Oréal Partnership -->
+        <div class="space-y-4">
+          <img src="assets/honey-brand-logo-dark.svg" alt="Honey Beauty Salon & Spa" class="h-12 w-auto">
+          <p class="text-stone-400 text-xs leading-relaxed">
+            Honey Beauty Salon &amp; Spa is Bhopal's premier destination for high-definition bridal artistry, L'Oréal hair restructuring, and restorative wellness.
+          </p>
+          <div class="pt-2 text-xs text-amber-400 font-bold flex items-center gap-2">
+            <i data-lucide="award" class="w-4 h-4 text-amber-400"></i> L'Oréal Professionnel Paris Partner
+          </div>
+          
+          <!-- HIGH-CONTRAST VERIFIED SOCIAL ICONS -->
+          <div class="flex items-center gap-3 pt-3">
+            <a href="https://www.instagram.com/honey_beauty_salon_bhopal/" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-full bg-stone-800 border border-stone-700 text-pink-400 hover:bg-gradient-to-tr hover:from-amber-500 hover:via-pink-500 hover:to-purple-500 hover:text-white flex items-center justify-center transition-all shadow-sm" aria-label="Official Instagram">
+              <i data-lucide="instagram" class="w-4 h-4"></i>
+            </a>
+            <a href="https://www.facebook.com/honeybeautysalonbhopal/" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-full bg-stone-800 border border-stone-700 text-blue-400 hover:bg-blue-600 hover:text-white flex items-center justify-center transition-all shadow-sm" aria-label="Official Facebook">
+              <i data-lucide="facebook" class="w-4 h-4"></i>
+            </a>
+            <a href="https://www.justdial.com/Bhopal/Honey-Beauty-Parlour-Trilanga/" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-full bg-stone-800 border border-stone-700 text-amber-400 hover:bg-amber-500 hover:text-stone-950 flex items-center justify-center transition-all shadow-sm" aria-label="Justdial Profile">
+              <i data-lucide="award" class="w-4 h-4"></i>
+            </a>
+            <a href="https://maps.google.com/?q=Honey+Beauty+Salon+Trilanga+Bhopal" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-full bg-stone-800 border border-stone-700 text-emerald-400 hover:bg-emerald-600 hover:text-white flex items-center justify-center transition-all shadow-sm" aria-label="Google Maps Directions">
+              <i data-lucide="map-pin" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 2: Dual Branch Addresses -->
+        <div class="space-y-4">
+          <h4 class="font-serif text-lg font-bold text-white tracking-wide border-b border-stone-800 pb-2">Our Bhopal Suites</h4>
+          
+          <div class="space-y-1.5 text-xs text-stone-300">
+            <strong class="text-amber-400 block font-semibold">Branch 1: Trilanga Flagship</strong>
+            <p>Main Road, Trilanga (Near Aura Mall &amp; Reliance Fresh), Bhopal, MP 462039</p>
+            <a href="https://maps.google.com/?q=Honey+Beauty+Salon+Trilanga+Bhopal" target="_blank" class="text-amber-300 hover:underline inline-flex items-center gap-1 pt-1">
+              <i data-lucide="map-pin" class="w-3.5 h-3.5"></i> Google Maps Directions &rarr;
+            </a>
+          </div>
+
+          <div class="space-y-1.5 text-xs text-stone-300 pt-3 border-t border-stone-800/80">
+            <strong class="text-amber-400 block font-semibold">Branch 2: Rohit Nagar Spa</strong>
+            <p>56, Main Road, Ramsharnam Colony, Rohit Nagar, Bawadiya Kalan / Gulmohar, Bhopal, MP 462039</p>
+            <a href="https://maps.google.com/?q=Honey+Beauty+Salon+Rohit+Nagar+Bhopal" target="_blank" class="text-amber-300 hover:underline inline-flex items-center gap-1 pt-1">
+              <i data-lucide="map-pin" class="w-3.5 h-3.5"></i> Google Maps Directions &rarr;
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 3: Quick Links & Services -->
+        <div class="space-y-3">
+          <h4 class="font-serif text-lg font-bold text-white tracking-wide border-b border-stone-800 pb-2">Service Portfolio</h4>
+          <ul class="space-y-2 text-xs text-stone-400">
+            <li><a href="#lookbook" class="hover:text-amber-400 transition-colors">Royal HD Airbrush Bridal Glow</a></li>
+            <li><a href="#lookbook" class="hover:text-amber-400 transition-colors">L'Oréal Keratin Glaze Smoothing</a></li>
+            <li><a href="#rate-card" class="hover:text-amber-400 transition-colors">Molecular Hair Botox Restructure</a></li>
+            <li><a href="#rate-card" class="hover:text-amber-400 transition-colors">7-Step Vortex Medical Hydra-Facial</a></li>
+            <li><a href="#rate-card" class="hover:text-amber-400 transition-colors">Moroccan Steam Bath &amp; Body Polish</a></li>
+            <li><a href="#rate-card" class="hover:text-amber-400 transition-colors">Pre-Bridal Radiance Ritual</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Direct Desk -->
+        <div class="space-y-4">
+          <h4 class="font-serif text-lg font-bold text-white tracking-wide border-b border-stone-800 pb-2">Direct Salon Desk</h4>
+          <div class="space-y-2 text-xs text-stone-300">
+            <div class="flex items-center gap-2">
+              <i data-lucide="phone" class="w-4 h-4 text-amber-400"></i>
+              <a href="tel:+919589374523" class="hover:text-amber-400 font-bold">+91 95893 74523</a>
+            </div>
+            <div class="flex items-center gap-2">
+              <i data-lucide="phone-call" class="w-4 h-4 text-amber-400"></i>
+              <a href="tel:+917552562774" class="hover:text-amber-400">+91 755 2562774</a>
+            </div>
+            <div class="flex items-center gap-2">
+              <i data-lucide="clock" class="w-4 h-4 text-amber-400"></i>
+              <span>Mon – Sun: 10:00 AM – 08:30 PM</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <i data-lucide="shield" class="w-4 h-4 text-emerald-400"></i>
+              <span>Ladies-Only Studio Protocols</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="pt-8 text-center text-xs text-stone-500">
+        &copy; 2026 Honey Beauty Salon &amp; Spa. All Rights Reserved. L'Oréal Professionnel Partner Salon. Bhopal, MP.
+      </div>
+
+    </div>
+  </footer>
+
+  <script>
+    // Initialize Lucide icons
+    lucide.createIcons();
+
+    // Scroll progress bar
+    window.addEventListener('scroll', () => {
+      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      document.getElementById('scrollProgress').style.width = scrolled + '%';
+    });
+
+    // Mobile menu drawer
+    const menuToggle = document.getElementById('mobileMenuBtn');
+    const menuClose = document.getElementById('mobileCloseBtn');
+    const menuDrawer = document.getElementById('mobileDrawer');
+
+    if (menuToggle && menuClose && menuDrawer) {
+      menuToggle.addEventListener('click', () => menuDrawer.classList.remove('hidden'));
+      menuClose.addEventListener('click', () => menuDrawer.classList.add('hidden'));
+      document.querySelectorAll('.mobile-item').forEach(link => {
+        link.addEventListener('click', () => menuDrawer.classList.add('hidden'));
+      });
+    }
+
+    // Dual-Campus Interactive Switcher
+    const campuses = {
+      trilanga: {
+        name: "Branch 1: Trilanga Flagship Studio",
+        landmark: "Near Aura Mall & Reliance Fresh",
+        address: "Main Road, Trilanga, Bhopal, Madhya Pradesh 462039",
+        phone: "+91 95893 74523",
+        map: "https://maps.google.com/?q=Honey+Beauty+Salon+Trilanga+Bhopal"
+      },
+      rohit: {
+        name: "Branch 2: Rohit Nagar Spa Suite",
+        landmark: "Bawadiya Kalan / Gulmohar Corridor",
+        address: "56, Main Road, Ramsharnam Colony, Rohit Nagar, Bhopal, MP 462039",
+        phone: "+91 755 2562774",
+        map: "https://maps.google.com/?q=Honey+Beauty+Salon+Rohit+Nagar+Bhopal"
+      }
+    };
+
+    function switchCampus(key) {
+      const data = campuses[key];
+      if (!data) return;
+
+      document.getElementById('campusName').innerText = data.name;
+      document.getElementById('campusAddress').innerText = data.address;
+      document.getElementById('campusPhone').href = 'tel:' + data.phone.replace(/\s+/g, '');
+      document.getElementById('campusPhone').innerHTML = '<i data-lucide="phone-call" class="w-3 h-3 text-champagne-700"></i> Direct: ' + data.phone;
+      document.getElementById('campusMapLink').href = data.map;
+
+      document.getElementById('tabTrilanga').classList.toggle('is-active', key === 'trilanga');
+      document.getElementById('tabRohit').classList.toggle('is-active', key === 'rohit');
+      lucide.createIcons();
+    }
+
+    // Service rate card filter
+    function filterServices(cat) {
+      document.querySelectorAll('.service-filter-btn').forEach(btn => btn.classList.remove('is-active'));
+      event.target.classList.add('is-active');
+
+      document.querySelectorAll('.service-item').forEach(item => {
+        if (cat === 'all' || item.getAttribute('data-cat') === cat) {
+          item.style.display = 'flex';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+
+    // Wizard submit
+    function handleWizardSubmit(e) {
+      e.preventDefault();
+      const branch = document.getElementById('wizBranch').value;
+      const service = document.getElementById('wizService').value;
+      const name = document.getElementById('wizName').value;
+      const time = document.getElementById('wizTime').value || 'Earliest available';
+      const msg = "Namaskar! I would like to book an appointment with Honey Salon.\n\n• Name: " + name + "\n• Branch: " + branch + "\n• Service: " + service + "\n• Preferred Time: " + time;
+      window.open("https://wa.me/919589374523?text=" + encodeURIComponent(msg), "_blank");
+    }
+
+
+    // FAQ Accordion (toggleFaq)
+    function toggleFaq(index) {
+      const ans = document.getElementById(`faqAns-${index}`);
+      const icon = document.getElementById(`faqIcon-${index}`);
+      if (!ans) return;
+      const isOpen = ans.classList.contains('is-open');
+      for (let i = 1; i <= 3; i++) {
+        const other = document.getElementById(`faqAns-${i}`);
+        const otherIcon = document.getElementById(`faqIcon-${i}`);
+        if (other && i !== index) other.classList.remove('is-open');
+        if (otherIcon && i !== index) otherIcon.setAttribute('data-lucide', 'plus');
+      }
+      if (isOpen) {
+        ans.classList.remove('is-open');
+        if (icon) icon.setAttribute('data-lucide', 'plus');
+      } else {
+        ans.classList.add('is-open');
+        if (icon) icon.setAttribute('data-lucide', 'minus');
+      }
+      lucide.createIcons();
+    }
+
+    // Modal Consultation Guide (openTipModal)
+    function openTipModal(type) {
+      const msg = `Namaskar Honey Beauty Salon! I would like to consult with your senior stylist regarding ${type} services.`;
+      window.open(`https://wa.me/919589374523?text=${encodeURIComponent(msg)}`, '_blank');
+    }
+
+    // Booking Submission Handler (handleBookingSubmit)
+    function handleBookingSubmit(e) {
+      if (e) e.preventDefault();
+      handleWizardSubmit(e);
+      const branch = document.getElementById('wizBranch') ? document.getElementById('wizBranch').value : '';
+      const service = document.getElementById('wizService') ? document.getElementById('wizService').value : '';
+      const name = document.getElementById('wizName') ? document.getElementById('wizName').value : 'Guest';
+      const time = document.getElementById('wizTime') ? document.getElementById('wizTime').value : 'Earliest slot';
+
+      const confirmMsg = document.getElementById('confirmMsg');
+      const confirmDetails = document.getElementById('confirmDetails');
+      if (confirmDetails) {
+        confirmDetails.innerHTML = `<div><strong>Guest:</strong> ${name}</div><div><strong>Branch:</strong> ${branch}</div><div><strong>Service:</strong> ${service}</div><div><strong>Time:</strong> ${time}</div>`;
+      }
+      if (confirmMsg) confirmMsg.classList.remove('hidden');
+    }
+
+    // Dynamic 72-Hour Urgency Countdown
+    (function initUrgencyCountdown() {
+      const storageKey = 'nexg_urgency_expiry_BP-005';
+      let expiryTime = localStorage.getItem(storageKey);
+      if (!expiryTime) {
+        expiryTime = Date.now() + (71 * 3600 * 1000) + (44 * 60 * 1000) + (18 * 1000);
+        localStorage.setItem(storageKey, expiryTime);
+      } else {
+        expiryTime = parseInt(expiryTime, 10);
+      }
+
+      function updateCountdown() {
+        const remaining = Math.max(0, expiryTime - Date.now());
+        const hours = Math.floor(remaining / (1000 * 60 * 60));
+        const minutes = Math.floor((remaining % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((remaining % (1000 * 60)) / 1000);
+        const el = document.getElementById('heroCountdown');
+        if (el) {
+          el.innerText = `${hours}h : ${String(minutes).padStart(2, '0')}m : ${String(seconds).padStart(2, '0')}s`;
+        }
+      }
+      setInterval(updateCountdown, 1000);
+      updateCountdown();
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ========================================== -->
+<!-- NEXG AI CONCIERGE & BOOKING ENGINE (RULE 6) -->
+<!-- ========================================== -->
+<div id="ai-concierge-root" class="fixed bottom-6 right-6 z-50 font-sans">
+  <!-- Launcher Button -->
+  <button id="ai-concierge-toggle" aria-label="Open AI Concierge" class="relative group flex items-center gap-3 bg-stone-900 hover:bg-stone-800 text-white pl-4 pr-5 py-3 rounded-full shadow-2xl border border-amber-500/40 hover:border-amber-400 transition-all duration-300 transform hover:scale-105">
+    <span class="relative flex h-3 w-3">
+      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
+      <span class="relative inline-flex rounded-full h-3 w-3 bg-amber-500"></span>
+    </span>
+    <div class="flex items-center gap-2">
+      <svg class="w-5 h-5 text-amber-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/>
+      </svg>
+      <span class="text-xs font-bold tracking-wide text-amber-300 group-hover:text-amber-200">AI Concierge &amp; Booking</span>
+    </div>
+  </button>
+
+  <!-- Interactive Modal / Chat Window -->
+  <div id="ai-concierge-window" class="hidden absolute bottom-16 right-0 w-[360px] sm:w-[410px] max-h-[580px] bg-stone-950 text-stone-100 rounded-2xl shadow-2xl border border-stone-800 flex flex-col overflow-hidden backdrop-blur-xl animate-fade-in">
+    <!-- Header -->
+    <div class="bg-gradient-to-r from-stone-900 via-stone-900 to-stone-950 p-4 border-b border-stone-800 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-9 h-9 rounded-full bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+          </svg>
+        </div>
+        <div>
+          <h4 class="text-sm font-bold text-white tracking-wide">Honey Salon AI Concierge</h4>
+          <p class="text-[10px] text-amber-400/90 flex items-center gap-1.5 font-medium">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Instant Booking & Beauty Consult
+          </p>
+        </div>
+      </div>
+      <button id="ai-concierge-close" class="text-stone-400 hover:text-white p-1 rounded-lg hover:bg-stone-800 transition-colors" aria-label="Close Assistant">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+
+    <!-- Messages Container -->
+    <div id="ai-concierge-messages" class="flex-1 overflow-y-auto p-4 space-y-3 text-xs leading-relaxed max-h-[360px]">
+      <div class="flex items-start gap-2.5">
+        <div class="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center shrink-0 mt-0.5 text-[11px] font-bold">AI</div>
+        <div class="bg-stone-900 border border-stone-800 p-3 rounded-2xl rounded-tl-sm text-stone-200">
+          Namaskar! Welcome to Honey Beauty Salon & Spa. I am your AI Beauty & Booking Assistant. How may I assist your glow today?
+        </div>
+      </div>
+
+      <!-- Quick Action Pills -->
+      <div class="pt-2">
+        <p class="text-[10px] uppercase font-bold text-stone-400 tracking-wider mb-2">Quick Inquiries</p>
+        <div class="flex flex-wrap gap-1.5" id="ai-concierge-pills">
+          <button type="button" class="ai-prompt-pill text-[11px] font-medium bg-stone-900 hover:bg-stone-800 text-stone-300 hover:text-amber-300 border border-stone-800 hover:border-amber-500/40 px-2.5 py-1 rounded-full transition-colors" data-query="What are your bridal makeup packages and trial options?">👰 Bridal Packages</button><button type="button" class="ai-prompt-pill text-[11px] font-medium bg-stone-900 hover:bg-stone-800 text-stone-300 hover:text-amber-300 border border-stone-800 hover:border-amber-500/40 px-2.5 py-1 rounded-full transition-colors" data-query="What is the difference between Keratin smoothing and Hair Botox?">✨ Keratin vs Botox</button><button type="button" class="ai-prompt-pill text-[11px] font-medium bg-stone-900 hover:bg-stone-800 text-stone-300 hover:text-amber-300 border border-stone-800 hover:border-amber-500/40 px-2.5 py-1 rounded-full transition-colors" data-query="Where are your branches located and what are the timings?">📍 Trilanga vs Rohit Nagar</button><button type="button" class="ai-prompt-pill text-[11px] font-medium bg-stone-900 hover:bg-stone-800 text-stone-300 hover:text-amber-300 border border-stone-800 hover:border-amber-500/40 px-2.5 py-1 rounded-full transition-colors" data-query="I want to schedule an appointment with your senior stylist.">📅 Book VIP Slot</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Direct WhatsApp Action Banner -->
+    <div class="px-4 py-2 bg-stone-900/80 border-t border-stone-800/80 flex items-center justify-between">
+      <span class="text-[11px] text-stone-400">Ready to speak with the desk?</span>
+      <a id="ai-concierge-wa-link" href="https://wa.me/919589374523?text=Namaskar,%20I%20have%20an%20inquiry%20from%20the%20website." target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-xs font-bold bg-emerald-600 hover:bg-emerald-500 text-white px-3 py-1.5 rounded-lg transition-all shadow-md">
+        <span>WhatsApp</span>
+        <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+      </a>
+    </div>
+
+    <!-- Input Footer -->
+    <div class="p-3 bg-stone-950 border-t border-stone-800 flex items-center gap-2">
+      <input id="ai-concierge-input" type="text" placeholder="Ask about services, pricing, bookings..." class="flex-1 bg-stone-900 border border-stone-800 text-stone-100 placeholder-stone-500 text-xs px-3.5 py-2.5 rounded-xl focus:outline-none focus:border-amber-400">
+      <button id="ai-concierge-send" aria-label="Send Message" class="bg-amber-500 hover:bg-amber-400 text-stone-950 font-bold p-2.5 rounded-xl transition-colors">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function() {
+  const profile = {"title": "Honey Salon AI Concierge", "subtitle": "Instant Booking & Beauty Consult", "avatar": "assets/honey-brand-logo-dark.svg", "theme_color": "amber", "primary_phone": "919589374523", "greeting": "Namaskar! Welcome to Honey Beauty Salon & Spa. I am your AI Beauty & Booking Assistant. How may I assist your glow today?", "quick_pills": [{"label": "\ud83d\udc70 Bridal Packages", "query": "What are your bridal makeup packages and trial options?"}, {"label": "\u2728 Keratin vs Botox", "query": "What is the difference between Keratin smoothing and Hair Botox?"}, {"label": "\ud83d\udccd Trilanga vs Rohit Nagar", "query": "Where are your branches located and what are the timings?"}, {"label": "\ud83d\udcc5 Book VIP Slot", "query": "I want to schedule an appointment with your senior stylist."}], "faqs": [{"keywords": ["bridal", "wedding", "makeup", "dulhan", "airbrush"], "answer": "Our High-Definition (HD) Airbrush Bridal Metamorphosis packages start from \u20b98,500 to \u20b915,000+. This includes customized skin prep, waterproof HD airbrush makeup, saree/lehenga draping, hair styling, and fresh floral accessories. We also offer complimentary 20-minute skin tone matching trials!"}, {"keywords": ["keratin", "botox", "smoothing", "rebonding", "frizz", "hair"], "answer": "We use genuine L'Or\u00e9al Professionnel Paris & K\u00e9rastase formulations. Keratin Glaze (\u20b93,500+) controls humidity frizz for sleek smoothness. Hair Botox (\u20b94,500+) is an intense hyaluronic & peptide restructuring treatment for bleached, damaged, or brittle hair fibers."}, {"keywords": ["branch", "branches", "location", "address", "trilanga", "rohit nagar", "timing", "hours"], "answer": "We have two luxury branches in South Bhopal:\n\u2022 Flagship: Main Road, Trilanga (Near Aura Mall & Reliance Fresh)\n\u2022 Spa Suite: 56, Ramsharnam Colony, Rohit Nagar (Bawadiya Kalan / Gulmohar)\nBoth are open 7 days a week: 10:00 AM \u2013 08:30 PM."}, {"keywords": ["price", "cost", "rate", "charges", "hydra", "facial", "spa"], "answer": "Signature service rates:\n\u2022 7-Step Vortex Medical Hydra-Facial: \u20b92,500 \u2013 \u20b94,500\n\u2022 Moroccan Bath & Body Polish: \u20b92,800 \u2013 \u20b94,200\n\u2022 L'Or\u00e9al Hair Spa & Scalp Detox: \u20b91,500 \u2013 \u20b92,800\n\u2022 Pre-Bridal Radiance Ritual: \u20b96,500 \u2013 \u20b911,000."}, {"keywords": ["book", "appointment", "slot", "schedule", "stylist"], "answer": "Slots are available today at both Trilanga and Rohit Nagar branches! Tap the 'Proceed to WhatsApp' button below to confirm your preferred time and service directly with our front desk."}]};
+  const toggleBtn = document.getElementById('ai-concierge-toggle');
+  const closeBtn = document.getElementById('ai-concierge-close');
+  const chatWindow = document.getElementById('ai-concierge-window');
+  const messagesBox = document.getElementById('ai-concierge-messages');
+  const inputField = document.getElementById('ai-concierge-input');
+  const sendBtn = document.getElementById('ai-concierge-send');
+  const waLink = document.getElementById('ai-concierge-wa-link');
+
+  if (!toggleBtn || !chatWindow) return;
+
+  function toggleChat() {
+    chatWindow.classList.toggle('hidden');
+    if (!chatWindow.classList.contains('hidden')) {
+      inputField.focus();
+    }
+  }
+
+  toggleBtn.addEventListener('click', toggleChat);
+  closeBtn.addEventListener('click', toggleChat);
+
+  function appendUserMessage(text) {
+    const row = document.createElement('div');
+    row.className = 'flex items-start justify-end gap-2.5';
+    row.innerHTML = '<div class="bg-amber-500/10 border border-amber-500/30 text-amber-200 p-3 rounded-2xl rounded-tr-sm">' + escapeHtml(text) + '</div>';
+    messagesBox.appendChild(row);
+    messagesBox.scrollTop = messagesBox.scrollHeight;
+  }
+
+  function appendBotMessage(text, suggestWa = false) {
+    const row = document.createElement('div');
+    row.className = 'flex items-start gap-2.5';
+    let waHtml = '';
+    if (suggestWa) {
+      const enc = encodeURIComponent("Namaskar, I inquired: " + text.slice(0, 80));
+      waHtml = '<div class="mt-2.5 pt-2 border-t border-stone-800"><a href="https://wa.me/' + profile.primary_phone + '?text=' + enc + '" target="_blank" class="inline-flex items-center gap-1.5 text-[11px] font-bold text-emerald-400 hover:underline">Confirm on WhatsApp ↗</a></div>';
+    }
+    row.innerHTML = '<div class="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center shrink-0 mt-0.5 text-[11px] font-bold">AI</div><div class="bg-stone-900 border border-stone-800 p-3 rounded-2xl rounded-tl-sm text-stone-200 whitespace-pre-line">' + escapeHtml(text) + waHtml + '</div>';
+    messagesBox.appendChild(row);
+    messagesBox.scrollTop = messagesBox.scrollHeight;
+  }
+
+  function escapeHtml(str) {
+    return str.replace(/[&<>"']/g, function(m) {
+      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m];
+    });
+  }
+
+  function findAnswer(query) {
+    const q = query.toLowerCase();
+    for (let f of profile.faqs) {
+      for (let k of f.keywords) {
+        if (q.includes(k.toLowerCase())) {
+          return f.answer;
+        }
+      }
+    }
+    return "Thank you for asking! For custom requirements, exact timing slots, or tailored service quotes, our dedicated front desk is available right now via WhatsApp.";
+  }
+
+  function handleSend(userText) {
+    const text = userText || inputField.value.trim();
+    if (!text) return;
+    appendUserMessage(text);
+    if (!userText) inputField.value = '';
+
+    const answer = findAnswer(text);
+    setTimeout(() => {
+      appendBotMessage(answer, true);
+      waLink.href = 'https://wa.me/' + profile.primary_phone + '?text=' + encodeURIComponent('Namaskar! Regarding: ' + text);
+    }, 400);
+  }
+
+  sendBtn.addEventListener('click', () => handleSend());
+  inputField.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') handleSend();
+  });
+
+  document.querySelectorAll('.ai-prompt-pill').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const q = this.getAttribute('data-query');
+      handleSend(q);
+    });
+  });
+})();
+</script>
+<!-- END NEXG AI CONCIERGE -->
+
+</body>
+</html>
